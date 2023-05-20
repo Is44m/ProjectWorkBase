@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+        <!-- Bootstrap Dropdown Hover CSS -->
+        <link href="css/animate.min.css" rel="stylesheet">
+        <link href="css/bootstrap-dropdownhover.min.css" rel="stylesheet">
+    
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+    
+        <!-- Bootstrap Dropdown Hover JS -->
+        <script src="js/bootstrap-dropdownhover.min.js"></script>
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+   <style>
+        body {
+          overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+          form {
+                  background-color: #F1F1F1;
+                  padding: 20px;
+                  border-radius: 10px;
+                  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+                  
+              }
+              #myDiv {
+            background-color: #27A1B7;
+          }
+          .logo{
+                  padding-left: 30px;
+                  padding-top: 10px;
+                  padding-bottom: 10px;
+              }
+              .slogan{
+                  padding-left: 20px;
+                  padding-top: 40px;
+              }
+          .button4{
+                  background-color: #27A1B7;
+                  width: 150px;
+                  margin-left: 50px;
+                  margin-right: 50px;
+                  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        
+              }
+        
+              .button4:hover{
+                background-color: #b9112d;
+        
+              }
+        
+              .inputbar{
+                width: 140px;
+                padding-left: 30px;
+              }
+              input[type=password], select {
+                width: 100%;
+                  margin: 8px 0;
+                  display: inline-block;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  box-sizing: border-box;
+                }
+                input[type=username], select {
+                width: 100%;
+                  margin: 8px 0;
+                  display: inline-block;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  box-sizing: border-box;
+                }
+                .footer{
+                  color:  #27A1B7;
+              }
+              .des{
+                padding-left: 10px;
+                padding-right: 10px;
+              }
+              .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 300px;
+      text-align: center;
+      border-radius: 5px;
+    }
+    
+    .modal-close {
+      color: #aaa;
+      float: left;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .modal-close:hover,
+    .modal-close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+      float: left;
+    }
+            </style>
+
+        <title>PWB | Login </title>
+    <link rel="icon" href="https://drive.google.com/uc?export=view&id=1do4DObQ20TFCRY-4t_NxjM2qeWVpAbdw" type="image/x-icon">
+
+
+  </head>
+  <body style="background-color: white;">
+    <div class="row">
+      <div class="col-1">
+        <a href="./"><img class="logo" src="https://drive.google.com/uc?export=view&id=1j8pAqlPUG4MK0mbvUv9qZCU-a4lYNa2p" height="100px"></a>
+    </div>
+    <div class="col-4 slogan">
+      <p style="font-size: 20px; font-family:Arial, Helvetica, sans-serif; color: #27A1B7; font-style: italic;"   > Empower your team, conquer projects.</p> 
+    </div>
+    <div class="col-6"></div>
+
+  </div>
+
+<div class="row"id="myDiv">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <br><br><br>
+        <form class="form-horizontal" action="/login/login" method="POST">
+            <legend><center><font style="font-family:Arial, Helvetica, sans-serif;  font-size: 36px;">Log In</font></center></legend><hr>
+            <div class="form-group">
+              <label class="inputbar" for="username">User Name:</label>
+              <div class="col-sm-12">
+                <div class="des"><input type="username" class="form-control" name="uname" id="uname" placeholder="Enter User Name" required></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="inputbar" for="pwd">Password:</label>
+              <div class="col-sm-12">
+                <div class="des"><input type="password" class="form-control" name="pwd" id = "pwd" placeholder="Enter Password" required></div>
+              </div>
+
+              <div>
+                <% if(failedloginatt == 1)
+            {%> 
+                <center><p style="color:red;">Please enter valid login credentials.</p></center>
+            <%} else {} %>
+              </div>
+
+              <div>
+                <center><a href="#modal" class="open-modal"><font style="color: black;">Forgot Password?</font></a></center>
+              </div>
+              <div id="modal" class="modal">
+                <div class="modal-content">
+                  <span class="modal-close">&times;</span>
+                  <p>Please Contact Admin</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-12">
+                <center><button type="submit" class="btn button4 btn-default" value="sub1"><font style="color: white;">Submit</font></button></center>
+              </div>
+            </div>
+          </form>
+          <br><br><br>
+    </div>
+
+    <div class="col-4"></div>
+
+</div>
+<script>
+    // CSS-only solution requires using the :target pseudo-class
+    window.addEventListener("DOMContentLoaded", function() {
+      var modal = document.getElementById("modal");
+      var openModalLinks = document.getElementsByClassName("open-modal");
+      
+      // Close modal when the close button or overlay is clicked
+      modal.addEventListener("click", function(event) {
+        if (event.target === modal || event.target.classList.contains("modal-close")) {
+          modal.style.display = "none";
+        }
+      });
+      
+      // Open modal when the open modal link is clicked
+      for (var i = 0; i < openModalLinks.length; i++) {
+        openModalLinks[i].addEventListener("click", function(event) {
+          event.preventDefault();
+          modal.style.display = "block";
+        });
+      }
+    });
+  </script>
+<!-- Footer starts -->
+<br><br>
+<div class="row">
+    <div class="col">
+        <center><img src="https://drive.google.com/uc?export=view&id=1HAXuH0sSWZWbGN2OsQrD-UgzonSodMum" height="150px"></center>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-link footer">Careers</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Privacy Policy</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Questions</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Help</button>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-link footer">Email</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Phone</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Fax</button>
+        <br>
+        <button type="button" class="btn btn-link"><img src="https://drive.google.com/uc?export=view&id=1N7HNvlOwt1Fo1IlS904iPnw52AR4M2kT" height="20px"></button>
+        <button type="button" class="btn btn-link"><img src="https://drive.google.com/uc?export=view&id=1LHjqLxUFppPkwzJjaoSMU09Nnj44kZke" height="20px"></button>
+        <button type="button" class="btn btn-link"><img src="https://drive.google.com/uc?export=view&id=1nBsJy9s2Djl0eZp0wIdsWVsavus1vXxd" height="20px"></button>
+
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-link footer">Technology</button><br>
+        <button type="button" class="btn btn-link footer">Terms of Service</button><br>
+        <button type="button" class="btn btn-link footer">Cookie Settings</button><br>
+        <button type="button" class="btn btn-link footer">API</button>
+
+    </div>
+    <div class="col">
+        <img src="https://drive.google.com/uc?export=view&id=1Bs8hWrnkoiJ3zHezVJ9BmQTMa5ZTwIcI" height="150px">
+    </div>
+</div> 
+<br>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col footer">
+      <center>© 2021 PWB All Rights Reserved</center>
+  </div>
+  <div class="col-1 footer">
+      <h4><center><a href="#top" class="nav-link">△</a></center></h4>
+   </div>
+</div>
+
+
+</body>
+</html>

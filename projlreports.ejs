@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+        <!-- Bootstrap Dropdown Hover CSS -->
+        <link href="css/animate.min.css" rel="stylesheet">
+        <link href="css/bootstrap-dropdownhover.min.css" rel="stylesheet">
+    
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+    
+        <!-- Bootstrap Dropdown Hover JS -->
+        <script src="js/bootstrap-dropdownhover.min.js"></script>
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        <style>
+
+#barGraph {
+      width: 400px;
+      height: 300px;
+      border: 1px solid #ccc;
+      margin: 20px auto;
+    }
+
+    .bar {
+      fill: #b9112d;
+    }
+
+    .bar text {
+      fill: white;
+      font-size: 12px;
+      text-anchor: middle;
+      /* dominant-baseline: middle; */
+    }
+
+    .axis {
+      font-size: 12px;
+    }
+
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+    canvas {
+      display: block;
+      margin: 20px auto;
+    }
+
+    .legend {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+
+    .legend-item span {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-right: 5px;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+.logo{
+          padding-left: 30px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+      }
+      .slogan{
+          padding-left: 20px;
+          padding-top: 40px;
+      }
+
+      #myDiv {
+          background-color: #27A1B7;
+        }
+
+        #myDiv {
+          background-color: #27A1B7;
+        }
+        
+      .profile {
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+        }
+      .profile img {
+          border-radius: 50%;
+          border: 2px solid #333333;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);;
+          border-color: silver;
+          border-width: 1px;
+        }
+
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #2da5ba;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          border-radius: 4px;
+          min-width: 250px;
+          padding: 10px;
+          border: 1px solid silver;
+          z-index: 1;
+          top: 90%;
+          right: 20%;
+          color: white;
+          font-family: 'Times New Roman', Times, serif;
+        }
+
+      .profile:hover .dropdown-content {
+          display: block;
+        }
+
+      .navbar {
+          position: absolute;
+          width: 180px;
+          padding-bottom: 280px;
+      }
+
+
+      .justify-content-start{
+          margin-top: 30px;
+          margin-bottom: 400px;
+        }
+
+
+      .selected{
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .footer{
+          color:  #27A1B7;
+      }
+
+        </style>
+        
+        <title>PWB | Reports</title>
+        <link rel="icon" href="https://drive.google.com/uc?export=view&id=1do4DObQ20TFCRY-4t_NxjM2qeWVpAbdw" type="image/x-icon">
+    
+  </head>
+  <body style="background-color: white;">
+    <div class="row">
+      <div class="col-1">
+        <a href="/"><img class="logo" src="https://drive.google.com/uc?export=view&id=1j8pAqlPUG4MK0mbvUv9qZCU-a4lYNa2p" height="100px"></a>
+    </div>
+    <div class="col-4 slogan">
+      <p style="font-size: 20px; font-family:Arial, Helvetica, sans-serif; color: #27A1B7; font-style: italic;"   > Empower your team, conquer projects.</p> 
+    </div>
+    <div class="col-6"></div>
+    <div class="col-1 profile">
+      <br>      
+      <img src="<%= userprops[0].Profile_Picture %>" alt="Profile" width="60" height="60">
+      <div class="dropdown-content">
+        <center><%= userprops[0].USER_NAME %>'s account</center>
+        <hr color="white">
+        User ID <%= userprops[0].USER_ID %><br>
+        User Type <%= userprops[0].USER_TYPE %><br>
+        Email <%= userprops[0].Email %>
+      </div>
+    </div>
+
+  </div>
+
+    <!-- Header ends -->
+
+    <div class="row"id="myDiv">
+      <div class="container-fluid">
+          <div class="row">
+            <div class="col-2">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <ul class="navbar-nav flex-column justify-content-start">
+                  <li class="nav-item">
+                    <a class="nav-link" href="./"><font style="color: black;">My Projects</font></a>
+                  </li><br>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./createproject"><font style="color: black;">Create Project</a></font>
+                  </li><br>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./createteam"><font style="color: black;">Create Team</a></font>
+                  </li><br>
+                  <li class="nav-item selected">
+                    <a class="nav-link" href="./Reports"><font style="color: black;">Reports</a></font>
+                  </li><br>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./Roadmap"><font style="color: black;">Roadmap</a></font>
+                  </li><br>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./Workflow"><font style="color: black;">Workflow</a></font>
+                  </li><br>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./Templates"><font style="color: black;">Templates</a></font>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-10">
+              <br><br>
+              <p style="font-size: 36px; font-family:Arial, Helvetica, sans-serif; color: white; ">Reports</p><br>
+              <center><p style="font-size: 36px; font-family:Arial, Helvetica, sans-serif; color: white; ">Project Progress</p></center><br>
+
+              <canvas id="pieChart" width="200" height="200"></canvas>
+            
+              <div class="legend">
+                <div class="legend-item">
+                  <span style="background-color: #FF6384;"></span>
+                  <span>In Prog</span>
+                </div>
+                <div class="legend-item">
+                  <span style="background-color: #36A2EB;"></span>
+                  <span>Yet to Start</span>
+                </div>
+                <div class="legend-item">
+                  <span style="background-color: #FFCE56;"></span>
+                  <span>Completed</span>
+                </div>
+              </div>
+            
+              <script>
+                var canvas = document.getElementById('pieChart');
+                var ctx = canvas.getContext('2d');
+                var chartData = [
+                  { label: 'In Progress', value: 60, color: '#FF6384' },
+                  { label: 'Yet to Start', value: 10, color: '#36A2EB' },
+                  { label: 'Completed', value: 30, color: '#FFCE56' }
+                ];
+            
+                var total = chartData.reduce(function (prev, current) {
+                  return prev + current.value;
+                }, 0);
+            
+                var startAngle = 0;
+                chartData.forEach(function (data) {
+                  var sliceAngle = (2 * Math.PI * data.value) / total;
+            
+                  ctx.beginPath();
+                  ctx.fillStyle = data.color;
+                  ctx.moveTo(canvas.width / 2, canvas.height / 2);
+                  ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 3, startAngle, startAngle + sliceAngle);
+                  ctx.closePath();
+                  ctx.fill();
+            
+                  startAngle += sliceAngle;
+                });
+              </script>
+            <br><br><br><br>
+            <center><p style="font-size: 36px; font-family:Arial, Helvetica, sans-serif; color: white; ">Issues per Project</p></center><br>
+
+            <center>
+              <svg id="barGraph"></svg>
+            
+              <script src="https://d3js.org/d3.v7.min.js"></script>
+              <script>
+                var dataset = [
+                  { projectID: 1, numIssues: 17 },
+                  { projectID: 2, numIssues: 13 },
+                  { projectID: 3, numIssues: 6 },
+                  { projectID: 4, numIssues: 20 }
+                ];
+            
+                var margin = { top: 20, right: 20, bottom: 30, left: 40 };
+                var width = 400 - margin.left - margin.right;
+                var height = 300 - margin.top - margin.bottom;
+            
+                var svg = d3.select("#barGraph")
+                  .attr("width", width + margin.left + margin.right)
+                  .attr("height", height + margin.top + margin.bottom)
+                  .append("g")
+                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            
+                var xScale = d3.scaleBand()
+                  .domain(dataset.map(function (d) { return d.projectID; }))
+                  .range([0, width])
+                  .padding(0.2);
+            
+                var yScale = d3.scaleLinear()
+                  .domain([0, d3.max(dataset, function (d) { return d.numIssues; })])
+                  .range([height, 0]);
+            
+                var xAxis = d3.axisBottom(xScale);
+                var yAxis = d3.axisLeft(yScale);
+            
+                svg.append("g")
+                  .attr("class", "axis")
+                  .attr("transform", "translate(0," + height + ")")
+                  .call(xAxis);
+            
+                svg.append("g")
+                  .attr("class", "axis")
+                  .call(yAxis);
+            
+                svg.selectAll(".bar")
+                  .data(dataset)
+                  .enter().append("rect")
+                  .attr("class", "bar")
+                  .attr("x", function (d) { return xScale(d.projectID); })
+                  .attr("y", function (d) { return yScale(d.numIssues); })
+                  .attr("width", xScale.bandwidth())
+                  .attr("height", function (d) { return height - yScale(d.numIssues); })
+                  .append("title")
+                  .text(function (d) { return "Project ID: " + d.projectID + ", Number of Issues: " + d.numIssues; });
+              </script>
+            
+            </center>
+              <br><br><br><br>
+          </div>
+          </div>
+        </div>
+  
+  </div>
+<!-- Footer starts -->
+<br><br>
+<div class="row">
+    <div class="col">
+        <center><img src="https://drive.google.com/uc?export=view&id=1HAXuH0sSWZWbGN2OsQrD-UgzonSodMum" height="150px"></center>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-link footer">Careers</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Privacy Policy</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Questions</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Help</button>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-link footer">Email</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Phone</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Fax</button>
+        <br>
+        <button type="button" class="btn btn-link"><img src="https://drive.google.com/uc?export=view&id=1N7HNvlOwt1Fo1IlS904iPnw52AR4M2kT" height="20px"></button>
+        <button type="button" class="btn btn-link"><img src="https://drive.google.com/uc?export=view&id=1LHjqLxUFppPkwzJjaoSMU09Nnj44kZke" height="20px"></button>
+        <button type="button" class="btn btn-link"><img src="https://drive.google.com/uc?export=view&id=1nBsJy9s2Djl0eZp0wIdsWVsavus1vXxd" height="20px"></button>
+
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-link footer">Technology</button><br>
+        <button type="button" class="btn btn-link footer">Terms of Service</button><br>
+        <button type="button" class="btn btn-link footer">Cookie Settings</button><br>
+        <button type="button" class="btn btn-link footer">API</button>
+
+    </div>
+    <div class="col">
+        <img src="https://drive.google.com/uc?export=view&id=1Bs8hWrnkoiJ3zHezVJ9BmQTMa5ZTwIcI" height="150px">
+    </div>
+</div> 
+<br>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col footer">
+        <center>© 2021 PWB All Rights Reserved</center>
+    </div>
+    <div class="col-1 footer">
+        <h4><center><a href="#top" class="nav-link">△</a></center></h4>
+    </div>
+</div>   
+
+
+</body>
+</html>

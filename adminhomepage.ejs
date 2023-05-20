@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Bootstrap Dropdown Hover CSS -->
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap-dropdownhover.min.css" rel="stylesheet">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap Dropdown Hover JS -->
+    <script src="js/bootstrap-dropdownhover.min.js"></script>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+
+      body { 
+          overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+      .logo{
+          padding-left: 30px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+      }
+      .slogan{
+          padding-left: 20px;
+          padding-top: 40px;
+      }
+
+      #myDiv {
+          background-color: #27A1B7;
+        }
+
+        #myDiv2{
+          background-color: #f8f9fa;
+        }
+        
+      .profile {
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+        }
+      .profile img {
+          border-radius: 50%;
+          border: 2px solid #333333;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);;
+          border-color: silver;
+          border-width: 1px;
+        }
+
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #2da5ba;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          border-radius: 4px;
+          min-width: 250px;
+          padding: 10px;
+          border: 1px solid silver;
+          z-index: 1;
+          top: 90%;
+          right: 20%;
+          color: white;
+          font-family: 'Times New Roman', Times, serif;
+        }
+
+      .profile:hover .dropdown-content {
+          display: block;
+        }
+
+      .navbar {
+          position: absolute;
+          width: 180px;
+
+      }
+
+
+      .justify-content-start{
+          margin-top: 30px;
+          margin-bottom: 400px;
+        }
+
+      .b_shadow{
+          background-color: white;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          width: 200px;
+        }
+
+      .b_shadow:hover {
+          background-color: transparent;
+        }
+
+      .selected{
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .footer{
+          color:  #27A1B7;
+      }
+      table {
+            border-collapse: collapse;
+            width: 100%;
+            color: white;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            /* border-bottom: 1px solid #ddd; */
+        }
+        
+        th {
+            background-color: rgba(241,241,241,0.2);
+        }
+
+    </style>
+
+<title>PWB | User Management </title>
+<link rel="icon" href="https://drive.google.com/uc?export=view&id=1do4DObQ20TFCRY-4t_NxjM2qeWVpAbdw" type="image/x-icon">
+
+
+  </head>
+  <body style="background-color: white;">
+    <div class="row">
+      <div class="col-1">
+        <a href="/"><img class="logo" src="https://drive.google.com/uc?export=view&id=1j8pAqlPUG4MK0mbvUv9qZCU-a4lYNa2p" height="100px"></a>
+    </div>
+    <div class="col-4 slogan">
+      <p style="font-size: 20px; font-family:Arial, Helvetica, sans-serif; color: #27A1B7; font-style: italic;"   > Empower your team, conquer projects.</p> 
+    </div>
+    <div class="col-6"></div>
+    <div class="col-1 profile">
+      <br>      
+      <img src="<%= userprops[0].Profile_Picture %>" alt="Profile" width="60" height="60">
+      <div class="dropdown-content">
+        <center><%= userprops[0].USER_NAME %>'s account</center>
+        <hr color="white">
+        User ID | <%= userprops[0].USER_ID %><br>
+        User Type | <%= userprops[0].USER_TYPE %><br>
+        Email | <%= userprops[0].Email %>
+      </div>
+    </div>
+
+  </div>
+
+    <!-- Header ends -->
+
+
+<div class="row">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-2" id="myDiv2">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <ul class="navbar-nav flex-column justify-content-start">
+                <li class="nav-item selected">
+                  <a class="nav-link" href="/adminhome"><font style="color: black;">User Management</font></a>
+                </li><br>
+                <li class="nav-item">
+                  <a class="nav-link" href="/adminhome/createproject"><font style="color: black;">Create Project</a></font>
+                </li><br>
+                <li class="nav-item">
+                  <a class="nav-link" href="/adminhome/workflow"><font style="color: black;">Workflow</a></font>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-10" id="myDiv">
+            <br><br>
+            <table>
+              <tr>
+                  <th>User ID</th>
+                  <th>User Name</th>
+                  <th>Password</th>
+                  <th>User Type</th>
+                  <th>Created By</th>
+                  <th>Profile Picture</th>
+                  <th>Email</th>
+              </tr>
+                <!--alluserslist has all users. run a loop on it and display it.-->
+                <%
+                  if(alluserslist.length > 0)
+                  {
+                    alluserslist.forEach(function(alluserslist){
+                  %>
+                  <tr>
+                      <td><%= alluserslist.USER_ID %></td>
+                      <td><%= alluserslist.USER_NAME %></td>
+                      <td><%= alluserslist.PW %></td>
+                      <td><%= alluserslist.USER_TYPE %></td>
+                      <td><%= alluserslist.Created_By_ID %></td>
+                      <td><img src="<%= alluserslist.Profile_Picture %>" alt="Profile" width="60" height="60"></td>
+                      <td><%= alluserslist.Email %></td>
+                      <td>
+                        <form action="/adminhome/edit/<%= alluserslist.USER_ID %>" method="POST">
+                          <button type="submit"><img src="https://drive.google.com/uc?export=view&id=1Y3__ngQ-tDetoYT23lxAEENpUKahXVuo" height="20px"></button>
+                        </form>
+                      </br>
+                        <form action="/adminhome/delete/<%= alluserslist.USER_ID %>" method="POST">
+                          <button type="submit"><img src="https://drive.google.com/uc?export=view&id=1KDHzu5z7yBSvW7hSQ_XUprKx4X55S9Gi" height="20px"></button>
+                        </form>
+                      </td>
+                  </tr>
+                  <%
+                      });
+                  }
+                  else{%>
+                  <tr>
+                      <td>No Data Found!</td>
+                  </tr>
+                  <%}%>
+
+          </table><br>
+          <a class="nav-link b_shadow btn" href="/adminhome/createuser"><font style="color: black;">Create User Account</font></a><br>
+
+            <br><br>
+        </div>
+        </div>
+      </div>
+
+</div>
+
+
+   <!-- Footer starts -->
+<br><br>
+<div class="row">
+    <div class="col">
+        <center><img src="https://drive.google.com/uc?export=view&id=1HAXuH0sSWZWbGN2OsQrD-UgzonSodMum" height="150px"></center>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-link footer">Careers</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Privacy Policy</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Questions</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Help</button>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-link footer">Email</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Phone</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Fax</button>
+        <br>
+        <button type="button" class="btn btn-link"><img src="https://drive.google.com/uc?export=view&id=1N7HNvlOwt1Fo1IlS904iPnw52AR4M2kT" height="20px"></button>
+        <button type="button" class="btn btn-link"><img src="https://drive.google.com/uc?export=view&id=1LHjqLxUFppPkwzJjaoSMU09Nnj44kZke" height="20px"></button>
+        <button type="button" class="btn btn-link"><img src="https://drive.google.com/uc?export=view&id=1nBsJy9s2Djl0eZp0wIdsWVsavus1vXxd" height="20px"></button>
+
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-link footer">Technology</button><br>
+        <button type="button" class="btn btn-link footer">Terms of Service</button><br>
+        <button type="button" class="btn btn-link footer">Cookie Settings</button><br>
+        <button type="button" class="btn btn-link footer">API</button>
+
+    </div>
+    <div class="col">
+        <img src="https://drive.google.com/uc?export=view&id=1Bs8hWrnkoiJ3zHezVJ9BmQTMa5ZTwIcI" height="150px">
+    </div>
+</div> 
+<br>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col footer">
+        <center>© 2023 PWB All Rights Reserved</center>
+    </div>
+    <div class="col-1 footer">
+        <h4><center><a href="#top" class="nav-link">△</a></center></h4>
+    </div>
+</div>   
+
+
+</body>
+</html>

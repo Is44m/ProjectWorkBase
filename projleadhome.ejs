@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+        <!-- Bootstrap Dropdown Hover CSS -->
+        <link href="css/animate.min.css" rel="stylesheet">
+        <link href="css/bootstrap-dropdownhover.min.css" rel="stylesheet">
+    
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+    
+        <!-- Bootstrap Dropdown Hover JS -->
+        <script src="js/bootstrap-dropdownhover.min.js"></script>
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        <style>
+
+body {
+          overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+
+.logo{
+          padding-left: 30px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+      }
+      .slogan{
+          padding-left: 20px;
+          padding-top: 40px;
+      }
+
+      #myDiv {
+          background-color: #27A1B7;
+        }
+        
+      .profile {
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+        }
+      .profile img {
+          border-radius: 50%;
+          border: 2px solid #333333;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);;
+          border-color: silver;
+          border-width: 1px;
+        }
+
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #2da5ba;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          border-radius: 4px;
+          min-width: 250px;
+          padding: 10px;
+          border: 1px solid silver;
+          z-index: 1;
+          top: 90%;
+          right: 20%;
+          color: white;
+          font-family: 'Times New Roman', Times, serif;
+        }
+
+      .profile:hover .dropdown-content {
+          display: block;
+        }
+
+      .navbar {
+          position: absolute;
+          width: 180px;
+
+      }
+
+
+      .justify-content-start{
+          margin-top: 30px;
+          margin-bottom: 400px;
+        }
+
+
+      .selected{
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .footer{
+          color:  #27A1B7;
+      }
+
+      table {
+            border-collapse: collapse;
+            width: 100%;
+            color: white;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            /* border-bottom: 1px solid #ddd; */
+        }
+        
+        th {
+            background-color: rgba(241,241,241,0.2);
+        }
+        .mov{
+          padding-left: 50px;
+        }
+
+
+
+        
+#barGraph {
+      width: 400px;
+      height: 300px;
+      border: 1px solid #ccc;
+      margin: 20px auto;
+    }
+
+    .bar {
+      fill: #b9112d;
+    }
+
+    .bar text {
+      fill: white;
+      font-size: 12px;
+      text-anchor: middle;
+      /* dominant-baseline: middle; */
+    }
+
+    .axis {
+      font-size: 12px;
+    }
+
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+    canvas {
+      display: block;
+      margin: 20px auto;
+    }
+
+    .legend {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+
+    .legend-item span {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-right: 5px;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+.logo{
+          padding-left: 30px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+      }
+      .slogan{
+          padding-left: 20px;
+          padding-top: 40px;
+      }
+
+      #myDiv {
+          background-color: #27A1B7;
+        }
+
+        #myDiv {
+          background-color: #27A1B7;
+        }
+        
+      .profile {
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+        }
+      .profile img {
+          border-radius: 50%;
+          border: 2px solid #333333;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);;
+          border-color: silver;
+          border-width: 1px;
+        }
+
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #2da5ba;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          border-radius: 4px;
+          min-width: 250px;
+          padding: 10px;
+          border: 1px solid silver;
+          z-index: 1;
+          top: 90%;
+          right: 20%;
+          color: white;
+          font-family: 'Times New Roman', Times, serif;
+        }
+
+      .profile:hover .dropdown-content {
+          display: block;
+        }
+
+      .navbar {
+          position: absolute;
+          width: 180px;
+          padding-bottom: 280px;
+      }
+
+
+      .justify-content-start{
+          margin-top: 30px;
+          margin-bottom: 400px;
+        }
+
+
+      .selected{
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .footer{
+          color:  #27A1B7;
+      }
+
+        </style>
+        
+        <title>PWB | Home Page </title>
+        <link rel="icon" href="https://drive.google.com/uc?export=view&id=1do4DObQ20TFCRY-4t_NxjM2qeWVpAbdw" type="image/x-icon">
+    
+  </head>
+  <body style="background-color: white;">
+    <div class="row">
+      <div class="col-1">
+        <a href="/"><img class="logo" src="https://drive.google.com/uc?export=view&id=1j8pAqlPUG4MK0mbvUv9qZCU-a4lYNa2p" height="100px"></a>
+    </div>
+    <div class="col-4 slogan">
+      <p style="font-size: 20px; font-family:Arial, Helvetica, sans-serif; color: #27A1B7; font-style: italic;"   > Empower your team, conquer projects.</p> 
+    </div>
+    <div class="col-6"></div>
+    <div class="col-1 profile">
+      <br>      
+      <img src="<%= userprops[0].Profile_Picture %>" alt="Profile" width="60" height="60">
+      <div class="dropdown-content">
+        <center><%= userprops[0].USER_NAME %>'s account</center>
+        <hr color="white">
+        User ID <%= userprops[0].USER_ID %><br>
+        User Type <%= userprops[0].USER_TYPE %><br>
+        Email <%= userprops[0].Email %>
+      </div>
+    </div>
+
+  </div>
+
+    <!-- Header ends -->
+
+    <div class="row"id="myDiv">
+      <div class="container-fluid">
+          <div class="row">
+            <div class="col-2">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <ul class="navbar-nav flex-column justify-content-start">
+                  <li class="nav-item selected">
+                    <a class="nav-link" href="/projlhome"><font style="color: black;">My Projects</font></a>
+                  </li><br>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/projlhome/createproject"><font style="color: black;">Create Project</a></font>
+                  </li><br>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/projlhome/createteam"><font style="color: black;">Create Team</a></font>
+                  </li><br>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/projlhome/reports"><font style="color: black;">Reports</a></font>
+                  </li><br>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/projlhome/roadmap"><font style="color: black;">Roadmap</a></font>
+                  </li><br>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/projlhome/workflow"><font style="color: black;">Workflow</a></font>
+                  </li><br>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/projlhome/templates"><font style="color: black;">Templates</a></font>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-10">
+              <br><br>
+              <p style="font-size: 36px; font-family:Arial, Helvetica, sans-serif; color: white; ">My Projects</p><br>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Project ID</th>
+                    <th>Project Name</th>
+                    <th>Lead ID</th>
+                    <th>Project Description</th>
+                    <th>Project Avatar</th>
+                    <th>Project Status</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Creator ID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%
+                  if(allprojslist.length > 0)
+                  {
+                    allprojslist.forEach(function(allprojslist){
+                  %>
+                  <tr>
+                      <td><%= allprojslist.Project_ID %></td>
+                      <td><%= allprojslist.Project_Name%></td>
+                      <td><%= allprojslist.Lead_ID %></td>
+                      <td><%= allprojslist.Project_Description %></td>
+                      <td><img src="<%= allprojslist.Project_Avatar %>" alt="Avatar" width="60" height="60"></td>
+                      <td><%= allprojslist.Status%></td>
+                      <td><%= allprojslist.Start_Date%></td>
+                      <td><%= allprojslist.End_Date%></td>
+                      <td><%= allprojslist.Creator_ID%></td>
+                  </tr>
+                    <%
+                });
+            }
+            else{%>
+            <tr>
+                <td>No Data Found!</td>
+            </tr>
+            <%}%>
+                </tbody>
+              </table>
+              <br><br><br><br>
+          </div>
+          </div>
+        </div>
+  
+  </div>
+<!-- Footer starts -->
+<br><br>
+<div class="row">
+    <div class="col">
+        <center><img src="https://drive.google.com/uc?export=view&id=1HAXuH0sSWZWbGN2OsQrD-UgzonSodMum" height="150px"></center>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-link footer">Careers</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Privacy Policy</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Questions</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Help</button>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-link footer">Email</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Phone</button>
+        <br>
+        <button type="button" class="btn btn-link footer">Fax</button>
+        <br>
+        <button type="button" class="btn btn-link"><img src="https://drive.google.com/uc?export=view&id=1N7HNvlOwt1Fo1IlS904iPnw52AR4M2kT" height="20px"></button>
+        <button type="button" class="btn btn-link"><img src="https://drive.google.com/uc?export=view&id=1LHjqLxUFppPkwzJjaoSMU09Nnj44kZke" height="20px"></button>
+        <button type="button" class="btn btn-link"><img src="https://drive.google.com/uc?export=view&id=1nBsJy9s2Djl0eZp0wIdsWVsavus1vXxd" height="20px"></button>
+
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-link footer">Technology</button><br>
+        <button type="button" class="btn btn-link footer">Terms of Service</button><br>
+        <button type="button" class="btn btn-link footer">Cookie Settings</button><br>
+        <button type="button" class="btn btn-link footer">API</button>
+
+    </div>
+    <div class="col">
+        <img src="https://drive.google.com/uc?export=view&id=1Bs8hWrnkoiJ3zHezVJ9BmQTMa5ZTwIcI" height="150px">
+    </div>
+</div> 
+<br>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col footer">
+        <center>© 2021 PWB All Rights Reserved</center>
+    </div>
+    <div class="col-1 footer">
+        <h4><center><a href="#top" class="nav-link">△</a></center></h4>
+    </div>
+</div>   
+
+
+</body>
+</html>

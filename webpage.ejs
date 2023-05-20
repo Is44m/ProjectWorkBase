@@ -1,0 +1,93 @@
+<!doctype html>
+    <head>
+    <!--/* Required meta tags */</!-->
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--/* Bootstrap CSS */}/-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous" />
+    <link href="./landing_css.css" rel="stylesheet" />
+    <title>Create Project</title>
+    </head>
+    <body style= "background-Color: 'white'">
+    <div className="row">
+        <div className="col-1">
+        {/* <a href="./LandingPage.html"><img className="logo" src="./logo.PNG" height="100px" /></a> */}
+        </div>
+        <div className="col-4 slogan">
+        <p style="font-Size: 20px; font-Family:'Arial, Helvetica, sans-serif'; color: '#27A1B7'; font-Style:'italic';">Empower your team, conquer projects.</p>
+        </div>
+        <div className="col-7"></div>
+    </div>
+
+    <div className="row">
+        <div className="container-fluid">
+        <div className="row">
+            <div className="col-lg-2">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <ul className="navbar-nav flex-column">
+                <li className="nav-item">
+                    {/* <a className="nav-link" href="./CreateProject.html">Create Project</a> */}
+                </li>
+                <li className="nav-item">
+                    {/* <a className="nav-link" href="./CreateTeam.html">Create Team</a> */}
+                </li>
+                <li className="nav-item">
+                    {/* <a className="nav-link" href="./CreateTeam.html">Templates</a> */}
+                </li>
+                </ul>
+            </nav>
+            </div>
+            <div className="col-lg-10">
+            <div className="row">
+                <div className="col-1"></div>
+                <div className="col-8">
+                <br /><br />
+                <form className="form-horizontal" action="/action_page.php">
+                    <legend><center><font style="font-Family: 'Arial, Helvetica, sans-serif';">Create Project</font></center></legend><br />
+                    <label htmlFor="project-id">Project ID:</label>
+                    <input type="text" id="project-id" name="project-id" placeholder="Enter your Project ID" required />
+
+                    <label htmlFor="project-name">Project Name:</label>
+                    <input type="text" id="project-name" name="project-name" placeholder="Enter Project Name" required /><br />
+
+                    <label htmlFor="lead-id">Lead ID:</label>
+                    <input type="text" id="lead-id" name="lead-id" placeholder="Enter Lead ID" required /><br />
+
+                    <label htmlFor="version-name">Version Name:</label>
+                    <input type="text" id="version-name" name="version-name" placeholder="Enter Version Name" required />
+
+                    <label htmlFor="version-release">Version Release:</label>
+                    <input type="text" id="version-release" name="version-release" placeholder="Enter Version Release" required /><br /><br />
+
+                    <label htmlFor="project-description">Project Description:</label><br />
+                    <textarea className="my-textarea" id="notes" name="notes" placeholder="Enter Project Description" ></textarea><br />
+
+                    <label htmlFor="project-avatar">Project Avatar:</label>
+                    <input type="file" id="project-avatar" name="project-avatar" placeholder="Enter Project Avatar" required />
+
+                    <label htmlFor="status">Status:</label>
+                    <input type="text" id="status" name="status" placeholder="Enter Status" required /><br />
+
+                    <label htmlFor="start-date">Start Date:</label>
+                    <input type="date" id="start-date" name="start-date" required />
+
+                    <label htmlFor="end-date">End Date:</label>
+                    <input type="date" id="end-date" name="end-date" required /><br /><br />
+                    <center>
+                    <button type="submit" className="btn button4 btn-default">
+                        <font style="color: 'white';">Create Project</font>
+                    </button>
+                    <button type="submit" className="btn button4 btn-default">
+                        Cancel
+                    </button>
+                    </center>
+                </form>
+                <br /><br /><br />
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </body>
+</html>
